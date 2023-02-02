@@ -1,14 +1,12 @@
-import Layout from '@/components/Layout'
-import PokedexContext from '@/contexts/PokedexContext'
-import React, { useContext } from 'react'
+import Layout from "@/components/Layout";
+import PokemonList from "@/components/lists/PokemonList";
 
 const Home = () => {
-  const {pokedexes} = useContext(PokedexContext);
   return (
-    <Layout>{pokedexes.map((poke) => {
-      return <p key={poke.name}>{poke.name}</p>
-    })}</Layout>
-  )
-}
+    <Layout>
+      <PokemonList />
+    </Layout>
+  );
+};
 
-export default Home
+export default Home;

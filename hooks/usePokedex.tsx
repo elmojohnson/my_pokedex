@@ -26,11 +26,11 @@ const usePokedex = () => {
     try {
       setLoading(true);
       const result = await axios.get(currentPokedex);
-      console.log(result.data);
+      setEntries(result.data.pokemon_entries);
     } catch (error) {
       console.error(error);
     } finally {
-      setLoading(true);
+      setLoading(false);
     }
   };
 

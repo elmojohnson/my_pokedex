@@ -12,7 +12,7 @@ export interface DexContext {
 }
 
 export interface Enrty {
-  enrty_number: number;
+  entry_number: number;
   pokemon_species: {
     name: string;
     url: string;
