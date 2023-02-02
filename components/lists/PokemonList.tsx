@@ -5,6 +5,7 @@ import PokemonItemLoading from "../items/PokemonItemLoading";
 
 const PokemonList = () => {
   const { entries, isLoading } = useContext(PokedexContext);
+
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
       {isLoading ? (
