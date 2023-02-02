@@ -1,5 +1,6 @@
 import PokedexContext from "@/contexts/PokedexContext";
 import React, { useContext } from "react";
+import PokemonItem from "../items/PokemonItem";
 
 const PokemonList = () => {
   const { entries, isLoading } = useContext(PokedexContext);
@@ -10,9 +11,7 @@ const PokemonList = () => {
       ) : (
         <div>
           {entries.map((pokemon) => {
-            return (
-              <p key={pokemon.entry_number}>{pokemon.pokemon_species.name}</p>
-            );
+            return <PokemonItem key={pokemon.entry_number} {...pokemon} />
           })}
         </div>
       )}
