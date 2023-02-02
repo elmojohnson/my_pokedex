@@ -5,7 +5,7 @@ import axios from "axios";
 const usePokedex = () => {
   // Pokedex
   const [pokedexes, setPokedexes] = useState<Pokedex[]>([]);
-  const [currentPokedex, setCurrentPokedex] = useState<string>("https://pokeapi.co/api/v2/pokedex/national");
+  const [currentPokedex, setCurrentPokedex] = useState<string>("kanto");
 
   // Entries (Pokemon)
   const [entries, setEntries] = useState<Enrty[]>([]);
@@ -25,7 +25,7 @@ const usePokedex = () => {
   const getEntries = async () => {
     try {
       setLoading(true);
-      const result = await axios.get(currentPokedex);
+      const result = await axios.get("https://pokeapi.co/api/v2/pokedex/" + currentPokedex);
       setEntries(result.data.pokemon_entries);
     } catch (error) {
       console.error(error);
